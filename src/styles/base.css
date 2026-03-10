@@ -50,13 +50,13 @@
   }
 
   body {
-    @apply flex min-h-[100svh] flex-col bg-skin-fill font-sans text-lg text-skin-base
+    @apply flex min-h-[100svh] flex-col bg-skin-fill font-sans text-lg leading-loose text-skin-base
     selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
   }
 
   section,
   footer {
-    @apply mx-auto max-w-6xl px-4;
+    @apply mx-auto max-w-3xl px-4;
   }
 
   a {
@@ -76,7 +76,7 @@
 
   /* ===== Headings ===== */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans font-semibold leading-relaxed;
+    @apply font-sans font-semibold leading-relaxed py-3;
     letter-spacing: -0.02em;
   }
 

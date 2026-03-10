@@ -22,7 +22,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
 <Layout>
   <Header />
   <main id="main-content">
-    <section id="hero">
+    <!--     <section id="hero">
       <h1>Flowcraft</h1>
 
       <p>
@@ -53,7 +53,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
           </div>
         )
       }
-    </section>
+    </section> -->
 
     <Hr />
 
@@ -144,6 +144,9 @@ const socialCount = SOCIALS.filter(social => social.active).length;
   #featured h2,
   #recent-posts h2 {
     @apply text-2xl font-semibold tracking-wide;
+  }
+  #featured ul {
+    @apply grid grid-cols-1 gap-6 sm:grid-cols-2;
   }
   .all-posts-btn-wrapper {
     @apply my-8 text-center;
