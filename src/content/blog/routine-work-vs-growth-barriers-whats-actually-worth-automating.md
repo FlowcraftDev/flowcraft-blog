@@ -3,7 +3,7 @@ title: "Routine Work vs. Growth Barriers: What's Actually Worth Automating"
 author: Vlad Bodi
 pubDatetime: 2025-07-28T00:00:00Z
 slug: routine-work-vs-growth-barriers-whats-actually-worth-automating
-featured: false
+featured: true
 draft: false
 tags:
   - operations
