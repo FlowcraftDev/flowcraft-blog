@@ -1,21 +1,19 @@
 ---
-title: The Unglamorous Work That Makes AI Agents Actually Function
 author: Vlad Bodi
-pubDatetime: 2025-07-28T00:00:00Z
+title: The Unglamorous Work That Makes AI Agents Actually Function
+ogImage: The Unglamorous Work That Makes AI Agents Actually Function
 slug: the-unglamorous-work-that-makes-ai-agents-actually-function
-featured: false
+featured: true
 draft: false
 tags:
   - ai
   - operations
 description: >
-  Everyone's building AI agents in 5 minutes — but nobody talks about the
-  months of data archaeology that comes first. The real blocker isn't the AI
+  Everyone's building AI agents in 5 minutes — but nobody talks about the months
+  of data archaeology that comes first. The real blocker isn't the AI
   technology; it's that most SMEs have no idea where their data is or how to
   prepare it.
-canonicalURL: https://blog.flowcraft.ventures/the-unglamorous-work-that-makes-ai-agents-actually-function/
 ---
-
 Everyone's building AI agents in 5 minutes with n8n these days. At least, that's what my LinkedIn feed tells me. Meanwhile, I just spent 3 months helping a client structure their data before they could deploy a single agent that actually worked.
 
 The problem isn't the AI technology – it's that most SMEs have no idea where their data is or how to prepare it for AI systems.
@@ -102,6 +100,6 @@ It's not a 5-minute process, and it's not particularly Instagram-worthy. But it'
 
 One take: the hardest part of AI implementation isn't building agents. It's building the foundation that makes agents useful.
 
----
+* * *
 
 _Curious about what your data landscape actually looks like? The discovery process might be more complex than you think._
