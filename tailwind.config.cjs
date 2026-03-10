@@ -11,18 +11,20 @@ function withOpacity(variableName) {
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    // Remove the following screen breakpoint or add other breakpoints
-    // if one breakpoint is not enough for you
     screens: {
       sm: "640px",
+      md: "768px",
+      lg: "1024px",
     },
 
     extend: {
+      // Skin-based dynamic colors (theme-aware via CSS variables)
       textColor: {
         skin: {
           base: withOpacity("--color-text-base"),
           accent: withOpacity("--color-accent"),
           inverted: withOpacity("--color-fill"),
+          muted: withOpacity("--color-text-muted"),
         },
       },
       backgroundColor: {
@@ -53,8 +55,35 @@ module.exports = {
         },
         transparent: "transparent",
       },
+
+      // Flowcraft static brand colors (same across themes)
+      colors: {
+        flowcraft: {
+          accent: "#dc2626",
+          "accent-secondary": "#ea580c",
+          gold: "#fbbf24",
+          tertiary: "#6b7280",
+        },
+      },
+
       fontFamily: {
+        sans: ["Spline Sans", "sans-serif"],
         mono: ["IBM Plex Mono", "monospace"],
+      },
+
+      letterSpacing: {
+        heading: "-0.02em",
+        button: "0.03em",
+      },
+
+      boxShadow: {
+        card: "0 0 0 1px rgba(255,255,255,0.1), 0 4px 20px rgba(0,0,0,0.3)",
+        "card-light": "0 0 0 1px rgba(0,0,0,0.08), 0 4px 20px rgba(0,0,0,0.08)",
+        "accent-glow": "0 0 25px rgba(220,38,38,0.4)",
+      },
+
+      borderRadius: {
+        DEFAULT: "0.5rem",
       },
 
       typography: {

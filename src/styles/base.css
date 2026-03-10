@@ -3,23 +3,43 @@
 @tailwind utilities;
 
 @layer base {
+  /* ===== Light theme (default) ===== */
   :root,
   html[data-theme="light"] {
-    --color-fill: 251, 254, 251;
-    --color-text-base: 40, 39, 40;
-    --color-accent: 0, 108, 172;
-    --color-card: 230, 230, 230;
-    --color-card-muted: 205, 205, 205;
-    --color-border: 236, 233, 233;
+    /* Background: near-white → inverted from dark #0a0f1a */
+    --color-fill: 249, 250, 251;
+    /* Primary text: near-black → inverted from dark #f9fafb */
+    --color-text-base: 17, 24, 39;
+    /* Muted text: medium gray (same tertiary anchor) */
+    --color-text-muted: 107, 114, 128;
+    /* Accent: brand red — unchanged across themes */
+    --color-accent: 220, 38, 38;
+    /* Card surface: light gray */
+    --color-card: 243, 244, 246;
+    /* Card muted / hover: slightly darker */
+    --color-card-muted: 229, 231, 235;
+    /* Border: subtle light gray */
+    --color-border: 209, 213, 219;
   }
+
+  /* ===== Dark theme ===== */
   html[data-theme="dark"] {
-    --color-fill: 33, 39, 55;
-    --color-text-base: 234, 237, 243;
-    --color-accent: 255, 107, 1;
-    --color-card: 52, 63, 96;
-    --color-card-muted: 138, 51, 2;
-    --color-border: 171, 75, 8;
+    /* Base background #0a0f1a */
+    --color-fill: 10, 15, 26;
+    /* Primary text #f9fafb */
+    --color-text-base: 249, 250, 251;
+    /* Secondary text #9ca3af */
+    --color-text-muted: 156, 163, 175;
+    /* Accent red #dc2626 */
+    --color-accent: 220, 38, 38;
+    /* Surface #111827 */
+    --color-card: 17, 24, 39;
+    /* Surface light / hover #1f2937 */
+    --color-card-muted: 31, 41, 55;
+    /* Border / tertiary #374151 */
+    --color-border: 55, 65, 81;
   }
+
   #sun-svg,
   html[data-theme="dark"] #moon-svg {
     display: none;
@@ -28,45 +48,57 @@
   html[data-theme="dark"] #sun-svg {
     display: block;
   }
+
   body {
-    @apply flex min-h-[100svh] flex-col bg-skin-fill font-mono text-skin-base 
+    @apply flex min-h-[100svh] flex-col bg-skin-fill font-sans text-lg text-skin-base
     selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
   }
+
   section,
   footer {
-    @apply mx-auto max-w-3xl px-4;
+    @apply mx-auto max-w-6xl px-4;
   }
+
   a {
-    @apply outline-2 outline-offset-1 outline-skin-fill 
+    @apply outline-2 outline-offset-1 outline-skin-fill
     focus-visible:no-underline focus-visible:outline-dashed;
   }
+
   svg {
     @apply inline-block h-6 w-6 fill-skin-base group-hover:fill-skin-accent;
   }
+
   svg.icon-tabler {
-    @apply inline-block h-6 w-6 scale-125 fill-transparent 
-    stroke-current stroke-2 opacity-90 group-hover:fill-transparent 
+    @apply inline-block h-6 w-6 scale-125 fill-transparent
+    stroke-current stroke-2 opacity-90 group-hover:fill-transparent
     sm:scale-110;
   }
+
+  /* ===== Headings ===== */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-semibold leading-relaxed;
+    letter-spacing: -0.02em;
+  }
+
   .prose {
-    @apply prose-headings:!mb-3 prose-headings:!text-skin-base 
-    prose-h3:italic prose-p:!text-skin-base 
+    @apply prose-headings:!mb-3 prose-headings:!text-skin-base
+    prose-h3:italic prose-p:!text-skin-base
     prose-a:!text-skin-base prose-a:!decoration-dashed prose-a:underline-offset-8
     hover:prose-a:text-skin-accent prose-blockquote:!border-l-skin-accent
     prose-blockquote:border-opacity-50 prose-blockquote:opacity-80
     prose-figcaption:!text-skin-base prose-figcaption:opacity-70
     prose-strong:!text-skin-base
 
-    
-    prose-code:rounded prose-code:bg-skin-card 
-    prose-code:bg-opacity-75 prose-code:p-1 
+
+    prose-code:rounded prose-code:bg-skin-card
+    prose-code:bg-opacity-75 prose-code:p-1
     prose-code:before:!content-none prose-code:after:!content-none
-    prose-ol:!text-skin-base 
+    prose-ol:!text-skin-base
     prose-ul:overflow-x-clip prose-ul:!text-skin-base prose-li:marker:!text-skin-accent
     prose-table:text-skin-base prose-th:border
-    prose-th:border-skin-line prose-td:border 
-    prose-td:border-skin-line prose-img:!my-2 
-    prose-img:mx-auto prose-img:border-2 
+    prose-th:border-skin-line prose-td:border
+    prose-td:border-skin-line prose-img:!my-2
+    prose-img:mx-auto prose-img:border-2
     prose-img:border-skin-line prose-hr:!border-skin-line;
   }
   .prose a {
@@ -129,7 +161,61 @@
   .display-none {
     @apply hidden;
   }
+
   .focus-outline {
     @apply outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
+  }
+
+  /* Flowcraft accent gradient text */
+  .accent-gradient {
+    background: linear-gradient(135deg, #dc2626 0%, #ea580c 50%, #fbbf24 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Section separator */
+  .section-separator {
+    @apply bg-gradient-to-r from-transparent via-flowcraft-tertiary/30 to-transparent;
+    height: 1px;
+  }
+
+  /* Primary CTA button */
+  .btn-primary {
+    @apply bg-flowcraft-accent hover:bg-flowcraft-accent-secondary text-white
+    font-semibold uppercase rounded px-6 py-3 transition-all duration-200;
+    letter-spacing: 0.03em;
+    min-height: 44px;
+  }
+  .btn-primary:hover {
+    box-shadow: 0 0 25px rgba(220, 38, 38, 0.4);
+  }
+
+  /* Outline / secondary button */
+  .btn-secondary {
+    @apply border-2 border-flowcraft-accent text-flowcraft-accent
+    hover:bg-flowcraft-accent hover:text-white
+    font-semibold uppercase rounded px-6 py-3 transition-all duration-200;
+    letter-spacing: 0.03em;
+    min-height: 44px;
+  }
+
+  /* Elevated card */
+  .card-elevated {
+    @apply border border-white/5 rounded transition-all duration-200;
+  }
+  html[data-theme="light"] .card-elevated {
+    border-color: rgba(0, 0, 0, 0.05);
+  }
+  .card-elevated:hover {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  html[data-theme="light"] .card-elevated:hover {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Accent glow helper (apply to elements that need the red glow) */
+  .accent-glow:hover {
+    box-shadow: 0 0 25px rgba(220, 38, 38, 0.4);
   }
 }
