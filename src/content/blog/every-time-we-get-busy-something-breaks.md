@@ -25,7 +25,7 @@ This conversation comes up constantly because honestly? Growth is supposed to be
 
 ## The Growth Paradox (Why Success Creates Problems)
 
-The cruel irony is that you get more business, then you can't handle the business you have.
+The cruel irony is that you get more business, then you can't handle the business you have!
 
 What worked when you were smaller doesn't work when you're bigger. What worked with a tight team breaks when you have more people. The process that made you successful becomes the thing that prevents more success.
 
